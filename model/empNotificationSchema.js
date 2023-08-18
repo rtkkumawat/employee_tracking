@@ -3,16 +3,22 @@ const mongoose = require('mongoose');
 const notificationSchema = new mongoose.Schema({
     title :{
         type : String,
-        required : true
+        default : ""
     },
     message:{
         type : String,
-        required : true
+        default : ""
+        
+    },
+    empId: {
+        type: mongoose.Types.ObjectId,
+        ref: "employee",
+        required: true,
     },
     isActive:{
         type : String,
-        required : true
+        default : "active"
     }
 })
 notificationSchema.set("timestamps",true);
-modules.exports = mongoose.model("notification",notificationSchema)
+module.exports = mongoose.model("notification",notificationSchema)

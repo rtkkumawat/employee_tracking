@@ -1,67 +1,68 @@
 const mongoose = require("mongoose")
 
 const empTimeSheetScchema = new mongoose.Schema({
-    clockIn : {
-        type : String,
-        required : true,
+    clockIn: {
+        type: String,
+        default : "",
     },
-    clockOut : {
-        type : String,
-        required : true,
+    clockOut: {
+        type: String,
+        default: "",
     },
-    clockInIP : {
-        type : String,
-        required : true,
+    clockInIP: {
+        type: String,
+        default: "",
     },
-    hoursLoggedIn : {
-        type : String,
-        required : true,
+    hoursLoggedIn: {
+        type: String,
+        default: "",
     },
-    workingFrom : {
-        type : String,
-        required : true,
+    workingFrom: {
+        type: String,
+        default: "",
     },
-    totalWorkingDays : {
-        type : String,
-        required : true,
+    totalWorkingDays: {
+        type: String,
+        default: "",
     },
-    daysPresent : {
-        type : String,
-        required : true,
+    daysPresent: {
+        type: String,
+        default: "",
     },
-    halfDay : {
-        type : String,
-        required : true,
+    halfDay: {
+        type: String,
+        default: "",
     },
-    daysAbsent : {
-        type : String,
-        required : true,
+    daysAbsent: {
+        type: String,
+        default: "",
     },
-    holidays : {
-        type : String,
-        required : true,
+    holidays: {
+        type: String,
+        default: "",
     },
-    daysLate : {
-        type : String,
-        required : true,
+    daysLate: {
+        type: String,
+        default: "",
     },
-    attendanceStatus : {
-        type : String,
-        required : true,
+    attendanceStatus: {
+        type: String,
+        default: "absent",
     },
-    emp_id : {
-        type : mongoose.Types.ObjectId,ref:"employee",
-        required : true,
+    empId: {
+        type: mongoose.Types.ObjectId,
+        ref: "employee",
+        required: true,
     },
-    status : {
-        type : String,
-        required : true,
+    status: {
+        type: String,
+        default: "",
     },
-    isActive : {
-        type : String,
-        required : true,
+    isActive: {
+        type: String,
+        default: "active",
     },
-    
+
 })
-empTimeSheetScchema.set('timestamps',true)
-module.exports = mongoose.model('timesheet',empTimeSheetScchema)
+empTimeSheetScchema.set('timestamps', true)
+module.exports = mongoose.model('timesheet', empTimeSheetScchema)

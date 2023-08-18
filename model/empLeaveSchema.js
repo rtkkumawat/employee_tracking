@@ -1,34 +1,39 @@
 const mongoose = require('mongoose');
 
 const empLeaveSchema = new mongoose.Schema({
-    casualLeave :{
-        type : String,
-        required : true
+    casualLeave: {
+        type: Number,
+        default: 10
     },
-    sickLeave:{
-        type : String,
-        required : true
+    sickLeave: {
+        type: Number,
+        default: 10
     },
-    totalLeave:{
-        type : String,
-        required : true
+    totalLeave: {
+        type: Number,
+        default: 10
     },
-    leaveStatus:{
-        type : String,
-        required : true
+    empStatus: {
+        type: String,
+        default: "pending"
     },
-    leaveType:{
-        type : String,
-        required : true
+    leaveType: {
+        type: String,
+        default: "casual"
     },
-    leaveMessage:{
-        type : String,
-        required : true
+    empId: {
+        type: mongoose.Types.ObjectId,
+        ref: "employee",
+        required: true,
     },
-    isActive:{
-        type : String,
-        required : true
+    leaveMessage: {
+        type: String,
+        required: true
+    },
+    isActive: {
+        type: String,
+        default: true
     }
 })
-empLeaveSchema.set("timestamps",true);
-modules.exports = mongoose.model("empLeave",empLeaveSchema)
+empLeaveSchema.set("timestamps", true);
+module.exports = mongoose.model("empLeave", empLeaveSchema)

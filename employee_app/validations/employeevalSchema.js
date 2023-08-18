@@ -48,7 +48,7 @@ const joiPassword = joi.extend(joiPasswordExtendCore);
             empTechnologies : joi 
             .string()
             .required(),
-            empgender : joi
+            empGender : joi
             .string()
             .required(),
             userRole : joi 
